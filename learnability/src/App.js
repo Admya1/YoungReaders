@@ -8,7 +8,7 @@ import Shop from "./component/Shop";
 import SpellSafari from "./component/SpellSafari";
 import FormApp from "./component/FormApp";
 import AppProvider from "./context";
-
+import Home from "./component/Home"
 export default function App() {
 
   const [coins, setCoins] = React.useState(0);
@@ -48,6 +48,8 @@ export default function App() {
       <Sidebar setCurrentPage={setCurrentPage} />
 
     {
+      currentPage === "Home" ? (
+        <Home />):
   currentPage === "Collectibles" ? (
     <Collectibles collectibles={collectibles} numCollectibles={numCollectibles} />
   ) : currentPage === "SwipeSight" ? (

@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../context";
-
+import Home from "../component/Home"
 
 const Form = (props) => {
   const {setCurrentPage} = props;
@@ -303,7 +303,7 @@ const Form = (props) => {
         <button
           type="submit"
           className="bg-yellow-600 rounde-md w-full p-2 text-white hover:bg-yellow-500"
-          onClick={() => setCurrentPage("Collectibles")}
+          onClick={() => setCurrentPage("Home")}
         >
           Submit
         </button>
