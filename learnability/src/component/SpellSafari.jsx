@@ -6,7 +6,7 @@ import forest3 from '../imgs/forest3.png';
 import wood from '../imgs/wood.png'; // import the wood image
 
 const SpellSafari = (props) => {
-  const {coins, setCoins} = props;
+  const {coins, setCoins,total,setTotal,score,setScore,scoreOfGame2,setScoreOfGame2,totalOfGame2,setTotalOfGame2} = props;
 
   const [isBlurred, setIsBlurred] = useState(true);
   const [index, setIndex] = useState(0);
@@ -43,11 +43,17 @@ const wrong = [
 
   const handleBlurClick = () => {
     setNewWords();
-    setIsBlurred(true);
+    setIsBlurred(true);    
+    setTotal(total+1);
+    setTotalOfGame2(totalOfGame2+1);
   };
 
   const handleUnblurClick = () => {
     setCoins(coins + 20);
+    setScore(score+1);
+    setTotal(total+1);
+    setScoreOfGame2(scoreOfGame2+1);
+    setTotalOfGame2(totalOfGame2+1);
     setIsBlurred(false);
     setTimeout(() => {
       setIndex(index + 1);

@@ -4,8 +4,8 @@ import IconCardSwipe from './IconCardSwipe';
 import { FaCoins } from 'react-icons/fa';
 
 const SwipeSight = (props) => {
-  const {coins, setCoins} = props;
-
+  const {coins, setCoins,total,setTotal,score,setScore,scoreOfGame1,setScoreOfGame1,totalOfGame1,setTotalOfGame1} = props;
+// console.log(totalii,setTotalii,scoreii,setScoreii);
 
   const [count, setCount] = useState(3); // Initialize count to 3
   const [seen, setSeen] = useState([]); // Keep track of the icons seen
@@ -154,9 +154,15 @@ const SwipeSight = (props) => {
       setCurrentIndex(currentIndex + 1);
       if (seen.includes(randomNums[currentIndex])) {
         setNumRight(numRight - 0.25);
+        setTotal(total+1);
+        setTotalOfGame1(totalOfGame1+1);
       }
       else{
         setNumRight(numRight + 0.5);
+        setScore(score+1);
+        setTotal(total+1);
+        setScoreOfGame1(scoreOfGame1+1);
+        setTotalOfGame1(totalOfGame1+1);
       }
     }
   };
@@ -166,9 +172,16 @@ const SwipeSight = (props) => {
       setCurrentIndex(currentIndex + 1);
       if (seen.includes(randomNums[currentIndex])) {
         setNumRight(numRight + 1);
+        setScore(score+1);
+        setTotal(total+1);
+        setScoreOfGame1(scoreOfGame1+1);
+        setTotalOfGame1(totalOfGame1+1);
       }
       else{
         setNumRight(numRight - 0.25)
+        // setScore(score+1);
+        setTotal(total+1);
+        setTotalOfGame1(totalOfGame1+1);
       }
     }
   };

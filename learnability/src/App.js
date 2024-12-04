@@ -13,6 +13,12 @@ import FormScore from "./component/FormScore";
 export default function App() {
 
   const [coins, setCoins] = React.useState(0);
+  const [score,setScore]=React.useState(0);
+  const [total,setTotal]=React.useState(0);
+  const [scoreOfGame1,setScoreOfGame1]=React.useState(0);
+  const [scoreOfGame2,setScoreOfGame2]=React.useState(0);
+  const [totalOfGame1,setTotalOfGame1]=React.useState(0);
+  const [totalOfGame2,setTotalOfGame2]=React.useState(0);
 
   const [currentPage, setCurrentPage] = React.useState("Form");
 
@@ -33,7 +39,8 @@ export default function App() {
 // "strength",
     ]
   )
-
+console.log(score,total);
+console.log(scoreOfGame1,totalOfGame1);
   // console.log(currentPage);
 
   if(currentPage == "Form"){
@@ -52,11 +59,14 @@ export default function App() {
       currentPage === "FormScore" ? (
         <FormScore />):
       currentPage === "Home" ? (
-        <Home />):
+        // <center>
+        <Home score={score} total={total}  scoreOfGame1={scoreOfGame1} totalOfGame1={totalOfGame1} scoreOfGame2={scoreOfGame2} totalOfGame2={totalOfGame2}/>
+        // </center>
+        ):
   currentPage === "Collectibles" ? (
     <Collectibles collectibles={collectibles} numCollectibles={numCollectibles} />
   ) : currentPage === "SwipeSight" ? (
-    <SwipeSight setCoins={setCoins} coins={coins} />
+    <SwipeSight setCoins={setCoins} coins={coins} setScore={setScore} score={score} setTotal={setTotal} total={total} setScoreOfGame1={setScoreOfGame1} scoreOfGame1={scoreOfGame1} setTotalOfGame1={setTotalOfGame1} totalOfGame1={totalOfGame1}/>
   ) : (
     currentPage === "WordWhiz" ? (
       <WordWhiz words={words} setWords={setWords} coins={coins} setCoins={setCoins} />
@@ -65,7 +75,7 @@ export default function App() {
         <Shop coins={coins} setCoins={setCoins} collectibles={collectibles} setCollectibles={setCollectibles} />
       ) : (
         currentPage === "SpellSafari" ? (
-          <SpellSafari coins={coins} setCoins={setCoins} />
+          <SpellSafari setCoins={setCoins} coins={coins} setScore={setScore} score={score} setTotal={setTotal} total={total} setScoreOfGame2={setScoreOfGame2} scoreOfGame2={scoreOfGame2} setTotalOfGame2={setTotalOfGame2} totalOfGame2={totalOfGame2}/>
         ) : null
       )
     )
