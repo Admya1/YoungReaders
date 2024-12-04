@@ -9,6 +9,7 @@ import SpellSafari from "./component/SpellSafari";
 import FormApp from "./component/FormApp";
 import AppProvider from "./context";
 import Home from "./component/Home"
+import FormScore from "./component/FormScore";
 export default function App() {
 
   const [coins, setCoins] = React.useState(0);
@@ -48,6 +49,8 @@ export default function App() {
       <Sidebar setCurrentPage={setCurrentPage} />
 
     {
+      currentPage === "FormScore" ? (
+        <FormScore />):
       currentPage === "Home" ? (
         <Home />):
   currentPage === "Collectibles" ? (
