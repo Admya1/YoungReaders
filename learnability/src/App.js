@@ -20,7 +20,7 @@ export default function App() {
   const [totalOfGame1,setTotalOfGame1]=React.useState(0);
   const [totalOfGame2,setTotalOfGame2]=React.useState(0);
 
-  const [currentPage, setCurrentPage] = React.useState("Form");
+  const [currentPage, setCurrentPage] = React.useState("Home");
 
   const numCollectibles = 12
   const [collectibles, setCollectibles] = React.useState([]);
@@ -52,7 +52,7 @@ console.log(scoreOfGame1,totalOfGame1);
   }
   else{
     return (
-  <div className="flex">
+  <div className="flex  justify-between bg-cream-50">
       <Sidebar setCurrentPage={setCurrentPage} />
 
     {
@@ -83,6 +83,7 @@ console.log(scoreOfGame1,totalOfGame1);
 }
 
      <CoinsDisplay coins={coins} setCurrentPage={setCurrentPage} />
+     <div className="min-h-screen"></div>
   </div>
   
   );

@@ -10,7 +10,7 @@ const Home = (props) => {
         {/* Hero Section */}
         <div className="bg-white rounded-2xl shadow-lg p-12 mb-12">
           <h1 className="text-6xl font-bold text-blue-600 mb-6 text-center">
-            Welcome to LearnAbility
+            Welcome to YoungReaders
           </h1>
           <p className="text-2xl text-gray-700 text-center leading-relaxed mb-8">
             Your journey to better reading starts here!
